@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;EAGE;ACHF,WAAW;EACP,MAAM,EAAE,IAAI;;AAEhB,OAAO;EACH,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,UAAU;EAC5B,OAAO,EAAE,KAAK;EACd,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,IAAI;EAChB,4BAA4B;;AAGhC,sBAAsB;EAClB,OAAO,EAAE,SAAS;;AAGtB,mBAAmB;EACf,OAAO,EAAE,SAAS",
+"sources": ["../../development/sass/_all.scss","../../development/sass/workspace.scss"],
+"names": [],
+"file": "estilo.css"
+}

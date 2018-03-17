@@ -1,0 +1,23 @@
+/* 
+    Created on : 04/03/2018, 23:06:04
+    Author     : dievano
+*/
+#div-painel {
+  height: 100%; }
+
+.painel {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /*border: 1px solid black;*/ }
+
+#quadroDescriptografia {
+  padding: 10px 20px; }
+
+#quadroCriptografia {
+  padding: 10px 20px; }
+
+/*# sourceMappingURL=estilo.css.map */

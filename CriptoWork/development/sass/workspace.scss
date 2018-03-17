@@ -1,0 +1,20 @@
+#div-painel{
+    height: 100%;
+}
+.painel{
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    display: block; 
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*border: 1px solid black;*/
+}
+
+#quadroDescriptografia{
+    padding: 10px 20px;
+}
+
+#quadroCriptografia{
+    padding: 10px 20px;
+}
