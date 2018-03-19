@@ -3,6 +3,7 @@
 
     <?php include './layouts/head.php'; ?>
 
+    <?php include './layouts/header.php'; ?>
     <body>
         <br>
         <br>
@@ -80,7 +81,7 @@
                                         <div class="field">
                                             <label class="label" for="inpFrase2">FRASE</label>
                                             <div class="control">
-                                                <input class="input" type="text" name="inputFrase2" id="inpFraseDescriptografia" placeholder="Ex: Vida longa e próspera!" required>
+                                                <input class="input" type="text" name="inputFrase2" id="inpFraseDescriptografiaGeral" placeholder="Ex: Vida longa e próspera!" required>
                                             </div>
                                             <p class="help">Insira uma frase ou palavra</p>
                                         </div>

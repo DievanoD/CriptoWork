@@ -3,6 +3,7 @@
 
     <?php include './layouts/head.php'; ?>
 
+    <?php include './layouts/header.php'; ?>
     <body>
         <br>
         <br>
@@ -62,7 +63,7 @@
             </div>
 
             <div class="column is-4">
-                <h3>RESULTADO</h3>
+                <!--<h3>RESULTADO</h3>-->
                 <div class="painel">
                     <p id="quadroCriptografia"></p>
                 </div>

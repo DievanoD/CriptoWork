@@ -117,6 +117,8 @@ $(document).ready(function () {
         var array_original = [];
         var array_ordenado = [];
 
+        chave = chave.toLowerCase();
+
         for (var i in chave)
         {
             array_original[i] = chave[i];
@@ -142,7 +144,7 @@ $(document).ready(function () {
         var col_matriz = chave.length;
         var lin_matriz = Math.ceil((frase_trim.length / col_matriz));
 
-        alert("Tamanho: " + frase_trim.length + ", linhas: " + lin_matriz + ", colunas: " + col_matriz);
+//        alert("Tamanho: " + frase_trim.length + ", linhas: " + lin_matriz + ", colunas: " + col_matriz);
         var matriz = new Array();
         var count = 0, count_alfabeto = 0;
 
@@ -236,13 +238,13 @@ $(document).ready(function () {
     }
 
     function descriptografaGeral(letras) {
-        var palavra = "";
+        var palavra_final = "";
 
         $("#quadroDescriptografia").html("");
         for (var i = 1; i <= 26; i++)
         {
-            palavra = descriptografaFrase(converteLetras(letras, i, "descriptografar"));
-            $("#quadroDescriptografia").append("CHAVE " + i + ": " + palavra + ", <br>");
+            palavra_final = descriptografaFrase(converteLetras(letras, i, "descriptografar"));
+            $("#quadroDescriptografia").append("CHAVE " + i + ": " + palavra_final + ", <br>");
         }
     }
 
@@ -270,7 +272,7 @@ $(document).ready(function () {
     });
 
     $("#btn-descriptografar-geral").click(function () {
-        var frase_cript = $("#inpFraseDescriptografia").val();
+        var frase_cript = $("#inpFraseDescriptografiaGeral").val();
         descriptografaGeral(frase_cript);
     });
 
@@ -295,4 +297,5 @@ function clearCampos() {
     $("input").val("");
     $("#quadroCriptografia").html("");
     $("#quadroDescriptografia").html("");
+    $("#quadroCriptografiaTransposicao").html("");
 }

@@ -3,6 +3,7 @@
 
     <?php include './layouts/head.php'; ?>
 
+    <?php include './layouts/header.php'; ?>
     <body>
         <br>
         <br>
