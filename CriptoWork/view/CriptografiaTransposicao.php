@@ -5,8 +5,17 @@
 
     <?php include './layouts/header.php'; ?>
     <body>
+        <!--<br>-->
         <br>
-        <br>
+        <div class="columns">
+            <div class="column">
+                <div class="content has-text-centered">
+                    <span id="title-conteudo">Criptografia Transposição de Colunas</span>
+                </div>
+            </div>
+        </div>
+        <hr>
+
         <div class="columns">
             <div class="column is-5">
                 <div class="columns">
@@ -20,7 +29,7 @@
                                             <div class="control">
                                                 <input class="input" type="text" name="inputChaveAlfa" id="inpChaveCriptografiaAlfa" placeholder="Ex: saber" required>
                                             </div>
-                                            <p class="help">Insira uma palavra</p>
+                                            <p class="help">Insira uma palavra sem letras repetidas</p>
                                         </div>
                                     </div>
                                 </div>
@@ -46,17 +55,11 @@
                                         <button type="button" id="btn-criptografar-transposicao" class="button is-success">
                                             Criptografar
                                         </button>
-
-                                        <!--                                <button type="button" id="btn-descriptografar-geral" class="button is-dark">
-                                                                            Descriptografar Geral
-                                                                        </button>-->
                                     </p>
                                 </div>
                             </form>
                         </div>
                     </div>
-
-
 
                 </div>
 
@@ -66,7 +69,6 @@
                 <div class="columns" id="div-painel">
                     <div class="column is-10 is-offset-2" >
                         <h3>RESULTADO</h3>
-
                         <div class="painel">
                             <p id="quadroCriptografiaTransposicao"></p>
                         </div>
@@ -75,8 +77,6 @@
                 </div>
             </div>
         </div>
-
-
 
     </body>
 </html>

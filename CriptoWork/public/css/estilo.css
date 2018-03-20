@@ -2,6 +2,12 @@
     Created on : 04/03/2018, 23:06:04
     Author     : dievano
 */
+@font-face {
+  font-family: Farsan;
+  src: url("../fonts/Farsan-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: Dosis;
+  src: url("../fonts/Dosis-Regular.ttf") format("truetype"); }
 #div-painel {
   height: 100%; }
 
@@ -15,17 +21,50 @@
   overflow-y: auto;
   /*border: 1px solid black;*/ }
 
-.is-256x256 {
+.img-box-home {
   text-align: center;
   width: 190px;
   height: 190px;
   /*background-color: #d8d8d8;*/ }
 
 #quadroDescriptografia {
-  padding: 10px 20px; }
+  padding: 5px; }
 
 #quadroCriptografia {
-  padding: 10px 20px; }
+  padding: 5px; }
+
+#quadroCriptografiaTransposicao {
+  padding: 5px; }
+
+#title-descricao-home {
+  font-family: 'Farsan', cursive;
+  font-size: 22pt; }
+
+#box-home {
+  /*transition: all .1s ease-in-out;*/ }
+
+#box-home:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  /*transform: scale(1.05);*/
+  /*border: 1px solid blue;*/
+  box-shadow: 0px 0px 150px #000000;
+  z-index: 2;
+  /*    -webkit-transition: all 200ms ease-in;
+      -webkit-transform: scale(1.1);
+      -ms-transition: all 200ms ease-in;
+      -ms-transform: scale(1.1);   
+      -moz-transition: all 200ms ease-in;
+      -moz-transform: scale(1.1);
+      transition: all 200ms ease-in;
+      transform: scale(1.1);*/ }
+
+#title-conteudo {
+  font-family: 'Farsan', cursive;
+  text-decoration: underline;
+  font-size: 40px;
+  color: green; }
 
 .title-logo {
   font-size: 18px;
