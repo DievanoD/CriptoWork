@@ -13,30 +13,31 @@
 
     <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="PaginaInicial.php">
+            <a class="navbar-item" href="PaginaInicial.php" id="nav-link-home">
+                <span class="icon is-medium"><i class="fas fa-home"></i></span>
                 Home
             </a>
 
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="#">
+                <a class="navbar-link" href="#" id="nav-link-substituicao">
                     Substituição
                 </a>
                 <div class="navbar-dropdown is-boxed">
-                    <a class="navbar-item" href="Criptografia.php">
+                    <a class="navbar-item" href="Criptografia.php" id="nav-link-criptografia">
                         Criptografar
                     </a>
-                    <a class="navbar-item" href="Descriptografia.php">
+                    <a class="navbar-item" href="Descriptografia.php" id="nav-link-descriptografia">
                         Descriptografar
                     </a>
                 </div>
             </div>
 
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="#">
+                <a class="navbar-link" href="#" id="nav-link-transposicao">
                     Transposição
                 </a>
                 <div class="navbar-dropdown is-boxed">
-                    <a class="navbar-item" href="CriptografiaTransposicao.php">
+                    <a class="navbar-item" href="CriptografiaTransposicao.php" id="nav-link-criptografia-transposicao">
                         Criptografar
                     </a>
                 </div>
@@ -45,11 +46,10 @@
         </div>
 
         <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="field is-grouped">
-
-                </div>
-            </div>
+            <a class="navbar-item" href="https://github.com/DievanoD/CriptoWork" target="_blank">
+                <span class="icon is-medium"><i class="fab fa-github"></i></span>
+                GitHub
+            </a>
         </div>
     </div>
 </nav>

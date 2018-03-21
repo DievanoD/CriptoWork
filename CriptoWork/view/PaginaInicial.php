@@ -3,12 +3,13 @@
     <?php include './layouts/head.php'; ?>
 
     <?php include './layouts/header.php'; ?>
-    <body>
+
+    <body onload="mudaStatusNavbar('nav-link-home');">
         <br><br>
         <div class="container">
             <div class="columns">
 
-                <div class="column">
+                <div class="column is-4-desktop is-4-fullhd">
                     <div class="box" id="box-home">
                         <div class="columns">
                             <div class="column">
@@ -41,7 +42,7 @@
                     </div>
                 </div>
 
-                <div class="column">
+                <div class="column is-4-desktop is-4-fullhd">
                     <div class="box" id="box-home">
                         <div class="columns">
                             <div class="column">
@@ -63,7 +64,7 @@
 
                                         <p class="has-text-justified" id="txt-descricao-home">
                                             Descriptografar com cifra de substituição simples,
-                                            na qual o processo é o inverso da criptografia. Insere
+                                            na qual o processo é o inverso da criptografia. Insira
                                             uma chave numérica e a mensagem desejada.
                                         </p>
 
@@ -76,7 +77,7 @@
                     </div>
                 </div>
 
-                <div class="column">
+                <div class="column is-4-desktop is-4-fullhd">
                     <div class="box" id="box-home">
                         <div class="columns">
                             <div class="column">
@@ -97,10 +98,9 @@
                                         <h3 id="title-descricao-home">Criptografia Transposição</h3>
 
                                         <p class="has-text-justified" id="txt-descricao-home">
-                                            Cifra de transposição de colunas,
-                                            na qual consiste em re-organizar os caracteres da mensagem
-                                            a ser criptografada. É organizado as colunas de acordo com
-                                            a chave fornecida.
+                                            Cifra de transposição de colunas, na qual consiste
+                                            em re-organizar  as colunas de acordo com a chave
+                                            fornecida. Insira uma chave sem letras repetidas.
                                         </p>
 
                                         <a href="CriptografiaTransposicao.php" class="button is-link is-medium">Acessar</a>

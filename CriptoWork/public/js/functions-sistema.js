@@ -273,7 +273,12 @@ $(document).ready(function () {
 
     $("#btn-descriptografar-geral").click(function () {
         var frase_cript = $("#inpFraseDescriptografiaGeral").val();
-        descriptografaGeral(frase_cript);
+
+        if (frase_cript.trim() !== "")
+        {
+            descriptografaGeral(frase_cript);
+        }
+
     });
 
     $("#btn-criptografar-transposicao").click(function () {

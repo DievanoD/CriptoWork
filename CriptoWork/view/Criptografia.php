@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
     <?php include './layouts/head.php'; ?>
 
+    <!--<title>Criptografia - Substituição</title>-->
+
     <?php include './layouts/header.php'; ?>
-    <body>
+
+    <body onload="mudaStatusNavbar('nav-link-criptografia');">
         <!--<br>-->
         <br>
         <div class="columns">
@@ -17,7 +19,7 @@
         <hr>
 
         <div class="columns">
-            <div class="column is-4 is-offset-2">
+            <div class="column is-4-desktop is-4-fullhd is-offset-2-desktop is-offset-2-fullhd">
                 <div class="box">
                     <form action="#" method="POST" name="form-cript-substituicao">
                         <div class="columns">
@@ -71,7 +73,7 @@
                 </div>
             </div>
 
-            <div class="column is-4">
+            <div class="column is-4-desktop is-4-fullhd">
                 <!--<h3>RESULTADO</h3>-->
                 <div class="painel">
                     <p id="quadroCriptografia"></p>
