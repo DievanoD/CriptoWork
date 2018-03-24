@@ -6,8 +6,8 @@
 
     <body onload="mudaStatusNavbar('nav-link-home');">
         <br><br>
-        <div class="container">
-            <div class="columns">
+        <div class="container-flex">
+            <div class="columns" id="container-home">
 
                 <div class="column is-4-desktop is-4-fullhd">
                     <div class="box" id="box-home">
@@ -113,6 +113,8 @@
                 </div>
 
             </div>
+
         </div>
+        <?php include './layouts/footer.php'; ?>
     </body>
 </html>
