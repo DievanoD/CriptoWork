@@ -5,7 +5,6 @@
 
     <?php include './layouts/header.php'; ?>
     <body onload="mudaStatusNavbar('nav-link-criptografia-transposicao');">
-        <!--<br>-->
         <br>
         <div class="container-flex">
             <div class="columns">
@@ -28,7 +27,7 @@
                                         <div class="control">
                                             <input class="input" type="text" name="inputChaveAlfa" id="inpChaveCriptografiaAlfa" placeholder="Ex: saber" required>
                                         </div>
-                                        <p class="help">Insira uma palavra sem letras repetidas</p>
+                                        <p class="help">Insira uma palavra sem letras repetidas *</p>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +39,7 @@
                                         <div class="control">
                                             <input class="input" type="text" name="inputFraseCriptografiaTransposicao" id="inpFraseCriptografiaTranposicao" placeholder="Ex: Vida longa e próspera!" required>
                                         </div>
-                                        <p class="help">Insira uma frase ou palavra</p>
+                                        <p class="help">Insira uma frase ou palavra *</p>
                                     </div>
                                 </div>
                             </div>
@@ -65,6 +64,22 @@
                     <!--<h3>RESULTADO</h3>-->
                     <div class="painel">
                         <p id="quadroCriptografiaTransposicao"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column is-8-desktop is-8-fullhd is-offset-2-desktop is-offset-2-fullhd">
+                    <div id="div-alerta">
+                        <article class="message is-danger">
+                            <div class="message-header">
+                                <p>Alerta</p>
+                                <button class="delete" aria-label="delete"></button>
+                            </div>
+                            <div class="message-body">
+                                Chave contém caracteres repetidos!
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>

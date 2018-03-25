@@ -19,6 +19,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao']))
  *
  * @author dievano
  */
+
+/**
+ * Os métodos que realizam a criptografia/descriptografia estão no arquivo js
+ * LOCALIZAÇÃO: public/js/functions-sistema.js
+ */
 class CriptografiaController
 {
 

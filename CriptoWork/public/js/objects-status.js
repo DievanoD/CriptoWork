@@ -1,4 +1,7 @@
-
+$(document).ready(function () {
+    $("#box-descriptografia-avancada").hide();
+    $("#div-alerta").hide();
+});
 function mudaStatusNavbar(obj) {
     var classe = document.getElementById(obj).className;
 
@@ -16,4 +19,18 @@ function mudaStatusNavbar(obj) {
         document.getElementById(obj).className = "navbar-item is-active";
     }
 
+}
+
+function mostraDescriptografiaSimples() {
+    document.getElementById("tab-desc-simples").className = "is-active";
+    document.getElementById("tab-desc-avancada").className = "";
+    $("#box-descriptografia-simples").show();
+    $("#box-descriptografia-avancada").hide();
+}
+
+function mostraDescriptografiaAvancada() {
+    document.getElementById("tab-desc-avancada").className = "is-active";
+    document.getElementById("tab-desc-simples").className = "";
+    $("#box-descriptografia-avancada").show();
+    $("#box-descriptografia-simples").hide();
 }

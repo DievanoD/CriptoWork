@@ -2,24 +2,26 @@ $(document).ready(function () {
 //    var alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var alfabeto = "abcdefghijklmnopqrstuvwxyz";
 
-    function converteLetras(letras, chave, acao) {
+    function converteLetras(frase, chave, acao) {
         var codigos = [];
-        for (var i in letras)
+
+        frase = removerCharEspeciais(frase);
+
+        for (var i in frase)
         {
-            if (letras[i] === " ")
+            if (frase[i] === " ")
             {
                 codigos[i] = "/";
-//                codigos.push("0");
             }
             else
             {
                 if (acao === "criptografar")
                 {
-                    codigos[i] = alfabeto.indexOf(removeAcento(letras[i].toLowerCase())) + chave;
+                    codigos[i] = alfabeto.indexOf(removeAcento(frase[i].toLowerCase())) + chave;
                 }
                 else if (acao === "descriptografar")
                 {
-                    codigos[i] = alfabeto.indexOf(removeAcento(letras[i].toLowerCase())) - chave;
+                    codigos[i] = alfabeto.indexOf(removeAcento(frase[i].toLowerCase())) - chave;
                 }
 
                 if (codigos[i] >= 26)
@@ -36,22 +38,29 @@ $(document).ready(function () {
                         codigos[i] = codigos[i] + alfabeto.length;
                     }
                 }
-//                codigos.push(alfabeto.indexOf(removeAcento(letras[i].toUpperCase())) + chave);
             }
-
         }
         return codigos;
     }
 
+    function removerCharEspeciais(frase) {
+        var char_especiais = [',', '.', ';', ':', '!', '?', '"', '\'', '(', ')', '=', '+', '-', '/'];
+
+        for (var i = 0; i < frase.length; i++)
+        {
+            for (var j = 0; j < char_especiais.length; j++)
+            {
+                if (frase.charAt(i) === char_especiais[j])
+                {
+                    frase = frase.replace(char_especiais[j], "");
+                }
+            }
+        }
+
+        return frase;
+    }
+
     function removeAcento(letra) {
-//        var acentos = {
-//            "ÁÅÃÀÂÄ": "A",
-//            "ÉÊÈË": "E",
-//            "ÍÎÌÏ": "I",
-//            "ÓÕÒÔÖ": "O",
-//            "ÚÙÛÜ": "U",
-//            "Ç": "C"
-//        };
         var acentos = {
             "áåãàâä": "a",
             "éêèë": "e",
@@ -93,7 +102,6 @@ $(document).ready(function () {
             indice = chave.charAt(i);
             for (var x = 0; x < chave.length; x++)
             {
-//                alert("Indice: " + indice + ", chave[i]: " + chave[x]);
                 if (indice === chave.charAt(x))
                 {
                     count++;
@@ -102,14 +110,12 @@ $(document).ready(function () {
 
             if (count > chave.length)
             {
-//                alert("false, contador: " + count);
                 return false;
             }
 
             i++;
         }
 
-//        alert("true, contador: " + count);
         return true;
     }
 
@@ -131,7 +137,6 @@ $(document).ready(function () {
         var indices = [];
 
         while (k < array_original.length) {
-//            alert(array_original.indexOf(array_ordenado[k]));
             indices[k] = array_original.indexOf(array_ordenado[k]);
             k++;
         }
@@ -140,11 +145,10 @@ $(document).ready(function () {
     }
 
     function criptografaTransposicao(frase, chave) {
-        var frase_trim = removeEspacos(frase);
-        var col_matriz = chave.length;
-        var lin_matriz = Math.ceil((frase_trim.length / col_matriz));
+        frase = removeEspacos(removerCharEspeciais(frase));
 
-//        alert("Tamanho: " + frase_trim.length + ", linhas: " + lin_matriz + ", colunas: " + col_matriz);
+        var col_matriz = chave.length;
+        var lin_matriz = Math.ceil((frase.length / col_matriz));
         var matriz = new Array();
         var count = 0, count_alfabeto = 0;
 
@@ -153,14 +157,14 @@ $(document).ready(function () {
             matriz[x] = new Array();
             for (var y = 0; y < col_matriz; y++)
             {
-                if (count >= frase_trim.length)
+                if (count >= frase.length)
                 {
                     matriz[x][y] = alfabeto[count_alfabeto];
                     count_alfabeto += 1;
                 }
                 else
                 {
-                    matriz[x][y] = frase_trim[count];
+                    matriz[x][y] = frase[count];
                 }
                 count += 1;
             }
@@ -213,7 +217,6 @@ $(document).ready(function () {
         {
             word_final = word_aux;
         }
-//        alert(word_final);
 
         return word_final;
     }
@@ -237,26 +240,26 @@ $(document).ready(function () {
         return word;
     }
 
-    function descriptografaGeral(letras) {
+    function descriptografaGeral(frase) {
         var palavra_final = "";
 
-        $("#quadroDescriptografia").html("");
+        $("#quadroDescriptografiaAvancada").html("");
         for (var i = 1; i <= 26; i++)
         {
-            palavra_final = descriptografaFrase(converteLetras(letras, i, "descriptografar"));
-            $("#quadroDescriptografia").append("CHAVE " + i + ": " + palavra_final + ", <br>");
+            palavra_final = descriptografaFrase(converteLetras(frase, i, "descriptografar"));
+            $("#quadroDescriptografiaAvancada").append("CHAVE " + i + ": " + palavra_final + ", <br>");
         }
     }
 
     $("#btn-criptografar").click(function () {
         var chave_cript = parseInt($("#inpChaveCriptografia").val());
         var range_caracteres = parseInt($("#inpCaracteresCriptografia").val());
-        var frase_descript = $("#inpFraseCriptografia").val();
+        var frase_normal = $("#inpFraseCriptografia").val();
 
-        var word = converteLetras(frase_descript, chave_cript, "criptografar");
+        var word = converteLetras(frase_normal, chave_cript, "criptografar");
 
         var resultado = criptografaFrase(word, range_caracteres);
-//        alert(teste);
+
         $("#quadroCriptografia").html(resultado);
     });
 
@@ -268,7 +271,7 @@ $(document).ready(function () {
 
         var rs = descriptografaFrase(palavra);
 
-        $("#quadroDescriptografia").html(rs);
+        $("#quadroDescriptografiaSimples").html(rs);
     });
 
     $("#btn-descriptografar-geral").click(function () {
@@ -291,9 +294,13 @@ $(document).ready(function () {
         }
         else
         {
-            $("#quadroCriptografiaTransposicao").html("Chave com caracteres repetidos!");
-        }
+            $("#quadroCriptografiaTransposicao").html("");
+            $("#div-alerta").show();
 
+            setTimeout(function () {
+                $('#div-alerta').hide();
+            }, 3000);
+        }
     });
 
 });
@@ -301,6 +308,7 @@ $(document).ready(function () {
 function clearCampos() {
     $("input").val("");
     $("#quadroCriptografia").html("");
-    $("#quadroDescriptografia").html("");
+    $("#quadroDescriptografiaSimples").html("");
+    $("#quadroDescriptografiaAvancada").html("");
     $("#quadroCriptografiaTransposicao").html("");
 }

@@ -46,6 +46,11 @@
         </div>
 
         <div class="navbar-end">
+            <a class="navbar-item" href="Sobre.php" id="nav-link-sobre">
+                <span class="icon is-medium"><i class="fas fa-info"></i></span>
+                Sobre CriptoWork
+            </a>
+
             <a class="navbar-item" href="https://github.com/DievanoD/CriptoWork" target="_blank">
                 <span class="icon is-medium"><i class="fab fa-github"></i></span>
                 GitHub

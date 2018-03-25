@@ -2,8 +2,6 @@
 <html lang="pt-BR">
     <?php include './layouts/head.php'; ?>
 
-    <!--<title>Criptografia - Substituição</title>-->
-
     <?php include './layouts/header.php'; ?>
 
     <body onload="mudaStatusNavbar('nav-link-criptografia');">
@@ -75,7 +73,6 @@
                 </div>
 
                 <div class="column is-4-desktop is-4-fullhd">
-                    <!--<h3>RESULTADO</h3>-->
                     <div class="painel">
                         <p id="quadroCriptografia"></p>
                     </div>

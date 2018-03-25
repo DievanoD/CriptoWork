@@ -5,7 +5,6 @@
 
     <?php include './layouts/header.php'; ?>
     <body onload="mudaStatusNavbar('nav-link-descriptografia');">
-        <!--<br>-->
         <br>
         <div class="container-flex">
             <div class="columns">
@@ -15,9 +14,14 @@
                     </div>
                 </div>
             </div>
-            <hr>
+            <div class="tabs is-centered">
+                <ul>
+                    <li class="is-active" id="tab-desc-simples"><a onclick="mostraDescriptografiaSimples();">Simples</a></li>
+                    <li id="tab-desc-avancada"><a onclick="mostraDescriptografiaAvancada();">Avançado</a></li>
+                </ul>
+            </div>
 
-            <div class="columns">
+            <div class="columns" id="box-descriptografia-simples">
                 <div class="column is-4-desktop is-4-fullhd is-offset-2-desktop is-offset-2-fullhd">
                     <div class="box">
                         <form action="#" method="POST">
@@ -28,7 +32,7 @@
                                         <div class="control">
                                             <input class="input" type="text" name="inputChave2" id="inpChaveDescriptografia" placeholder="Ex: 1, 2...etc" required>
                                         </div>
-                                        <p class="help">Insira um número inteiro</p>
+                                        <p class="help">Insira um número inteiro positivo *</p>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +43,7 @@
                                         <div class="control">
                                             <input class="input" type="text" name="inputFrase2" id="inpFraseDescriptografia" placeholder="Ex: Vida longa e próspera!" required>
                                         </div>
-                                        <p class="help">Insira uma frase ou palavra</p>
+                                        <p class="help">Insira uma frase ou palavra *</p>
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +61,17 @@
                             </div>
                         </form>
                     </div>
+                </div>
 
+                <div class="column is-4-desktop is-4-fullhd">
+                    <div class="painel">
+                        <p id="quadroDescriptografiaSimples"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns" id="box-descriptografia-avancada">
+                <div class="column is-4-desktop is-4-fullhd is-offset-2-desktop is-offset-2-fullhd">
                     <div class="box">
                         <form action="#" method="POST">
                             <div class="columns">
@@ -67,7 +81,7 @@
                                         <div class="control">
                                             <input class="input" type="text" name="inputFrase2" id="inpFraseDescriptografiaGeral" placeholder="Ex: Vida longa e próspera!" required>
                                         </div>
-                                        <p class="help">Insira uma frase ou palavra</p>
+                                        <p class="help">Insira uma frase ou palavra *</p>
                                     </div>
                                 </div>
                             </div>
@@ -88,9 +102,8 @@
                 </div>
 
                 <div class="column is-4-desktop is-4-fullhd">
-                    <!--<h3>RESULTADO</h3>-->
                     <div class="painel">
-                        <p id="quadroDescriptografia"></p>
+                        <p id="quadroDescriptografiaAvancada"></p>
                     </div>
                 </div>
             </div>
