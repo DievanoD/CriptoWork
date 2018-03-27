@@ -259,8 +259,12 @@ $(document).ready(function () {
         var word = converteLetras(frase_normal, chave_cript, "criptografar");
 
         var resultado = criptografaFrase(word, range_caracteres);
+        if ($("#inpChaveCriptografia").val() !== "")
+        {
+            $("#quadroCriptografia").html(resultado);
+        }
 
-        $("#quadroCriptografia").html(resultado);
+
     });
 
     $("#btn-descriptografar").click(function () {
@@ -271,7 +275,11 @@ $(document).ready(function () {
 
         var rs = descriptografaFrase(palavra);
 
-        $("#quadroDescriptografiaSimples").html(rs);
+        if ($("#inpChaveDescriptografia").val() !== "")
+        {
+            $("#quadroDescriptografiaSimples").html(rs);
+        }
+
     });
 
     $("#btn-descriptografar-geral").click(function () {
@@ -288,7 +296,7 @@ $(document).ready(function () {
         var chave_alfabetica = $("#inpChaveCriptografiaAlfa").val();
         var frase_criptografia_transposicao = $("#inpFraseCriptografiaTranposicao").val();
 
-        if (verificaChaveAlfabetica(chave_alfabetica) === true)
+        if (verificaChaveAlfabetica(chave_alfabetica) === true && $("#inpChaveCriptografiaAlfa").val() !== "")
         {
             $("#quadroCriptografiaTransposicao").html(criptografaTransposicao(frase_criptografia_transposicao, chave_alfabetica));
         }

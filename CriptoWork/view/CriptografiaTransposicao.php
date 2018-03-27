@@ -77,7 +77,7 @@
                                 <button class="delete" aria-label="delete"></button>
                             </div>
                             <div class="message-body">
-                                Chave contém caracteres repetidos!
+                                Chave contém caracteres repetidos! Ou campo está nulo!
                             </div>
                         </article>
                     </div>
